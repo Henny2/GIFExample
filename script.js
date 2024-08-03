@@ -1,5 +1,6 @@
 // // @ts-ignore
 // import { GIF } from "./gif"
+const TextOnGif = require('text-on-gif');
 
 const videoElement = document.getElementById('video');
 const startButton = document.getElementById('startRecording');
@@ -51,6 +52,8 @@ function convertToGIF(videoBlob) {
         workers: 2,
         quality: 10
     });
+
+    gif.addFrame("test")
 
     const url = URL.createObjectURL(videoBlob);
     const video = document.createElement('video');
